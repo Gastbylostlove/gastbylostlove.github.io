@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>before sunrise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <style>
+    body {
+      font-family: 'Playfair Display', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #89CFF0;
+    }
+    .slider {
+      position: relative;
+      width: 80%;
+      margin: 20px auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .slider img {
+      width: 100%;
+      display: none;
+    }
+    .slider img.active {
+      display: block;
+    }
+    .letters {
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: left;
+    }
+    .letters ul {
+      list-style: none;
+      padding: 0;
+    }
+    .letters li {
+      font-family: 'Noto Sans KR', sans-serif;
+      padding: 10px;
+      margin: 5px 0;
+      background: #FFD1DC;
+      border: 1px solid #AFCBFF;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .letters li:hover {
+      background: #FF7F7F;
+    }
+    .letter-content {
+       font-family: 'Noto Sans KR', sans-serif;
+      margin-top: 20px;
+      padding: 15px;
+      background: #FFEBEE;
+      border: 1px solid #AFCBFF;
+      display: none;
+      color: #2F4F4F;
+    }
+  </style>
+</head>
+<body>
+  <h1>before sunrise</h1>
+  <audio controls autoplay>
+    <source src ="1 05.mp3" type ="audio/mp3">
+  </audio>  
+
+  <!-- 사진 슬라이드 -->
+  <div class="slider">
+    <img src="/Users/narihwang/Desktop/letter/ㅇㅈㅇ 복사본/사진 2022. 7. 31. 오후 4.42 #2.jpg" alt="Image 1" class="active">
+    <img src="/Users/narihwang/Desktop/letter/ㅇㅈㅇ 복사본/사진 2022. 7. 31. 오후 4.42 #2(원본).jpg" alt="Image 2">
+    <img src="ㅇㅈㅇ 복사본/사진 2022. 7. 31. 오후 4.42.jpg" alt="Image 3">
+    <img src="ㅇㅈㅇ 복사본/사진 2022. 7. 31. 오후 4.42(원본).jpg" alt="Image 4">
+    <img src="ㅇㅈㅇ 복사본/사진 2022. 7. 31. 오후 4.44.jpg" alt="Image 5">
+    <img src="ㅇㅈㅇ 복사본/사진 2022. 7. 31. 오후 4.44(원본).jpg" alt="Image 6">
+    <img src="ㅇㅈㅇ 복사본/사진 2022. 7. 31. 오후 4.45 #2.jpg" alt="Image 7">
+    <img src="ㅇㅈㅇ 복사본/사진 2022. 7. 31. 오후 4.45 #2(원본).jpg" alt="Image 8">
+    <img src="ㅇㅈㅇ 복사본/사진 2022. 7. 31. 오후 4.45(원본).jpg" alt="Image 9">
+    <img src="ㅇㅈㅇ 복사본/사진 2022. 7. 31. 오후 4.46.jpg" alt="Image 10">
+    <img src="ㅇㅈㅇ 복사본/사진 2022. 7. 31. 오후 4.46(원본).jpg" alt="Image 11">
+    <img src="ㅇㅈㅇ 복사본/사진 2022. 7. 31. 오후 4.47 #2.jpg" alt="Image 12">
+    <img src="/Users/narihwang/Desktop/letter/ㅇㅈㅇ 복사본/사진 2022. 7. 31. 오후 4.47 #2(원본).jpg" alt="Image 13">
+    <img src="ㅇㅈㅇ 복사본/사진 2022. 7. 31. 오후 4.47 #2(원본).jpg" alt="Image 14">
+    <img src="ㅇㅈㅇ 복사본/사진 2022. 7. 31. 오후 4.47.jpg" alt="Image 15">
+    <img src="ㅇㅈㅇ 복사본/사진 2022. 7. 31. 오후 4.47(원본).jpg" alt="Image 16">
+    <img src="ㅇㅈㅇ 복사본/사진 2024. 4. 3. 오후 10.54 #2.jpg" alt="Image 17">
+    <img src="ㅇㅈㅇ 복사본/사진 2024. 4. 3. 오후 10.54 #3.jpg" alt="Image 18">
+    <img src="ㅇㅈㅇ 복사본/사진 2024. 4. 3. 오후 10.54 #4.jpg" alt="Image 19">
+    <img src="ㅇㅈㅇ 복사본/사진 2024. 4. 3. 오후 10.54 #5.jpg" alt="Image 20">
+    <img src="ㅇㅈㅇ 복사본/사진 2024. 4. 3. 오후 10.54.jpg" alt="Image 21">
+
+
+  </div>
+
+  <!-- 편지 목록 -->
+  <div class="letters">
+    <ul>
+      <li data-letter="letter1">첫 번째 편지</li>
+      <li data-letter="letter2">두 번째 편지</li>
+      <li data-letter="letter3">세 번째 편지</li>
+    </ul>
+    <div class="letter-content" id="letter1">
+        <h2>101가지</h2>
+        <ol>
+          <li>웃는게 이쁘다</li>
+          <li>상대방을 배려할 줄 아는 사람이다</li>
+          <li>똑부러지다</li>
+          <li>서투른 모습</li>
+          <li>의도가 없다</li>
+          <li>천진난만하다</li>
+          <li>자기 자신을 사랑할 줄 안다</li>
+          <li>당당하고 당찬 모습이 멋있다</li>
+          <li>주위에 휘둘리지 않는다</li>
+          <li>뭐든 잘 먹는다</li>
+          <li>말의 신뢰가 있다</li>
+          <li>말을 이쁘게 한다</li>
+          <li>아기를 좋아한다</li>
+          <li>동물을 좋아한다</li>
+          <li>벌레를 잘 잡는다</li>
+          <li>당연시 여기지 않는다</li>
+          <li>작은 걸로 행복할 줄 아는 사람</li>
+          <li>고마운 줄 아는 사람</li>
+          <li>쓸데없는 거에 화를 내지 않는다</li>
+          <li>상대방을 함부로 깎아내리지 않는다</li>
+          <li>경제력이 강하다</li>
+          <li>우는 모습이 귀엽다</li>
+          <li>애교가 많다</li>
+          <li>이쁘다</li>
+          <li>나를 봐주는 눈빛</li>
+          <li>순수하다</li>
+          <li>상대방을 있는 그대로 봐준다</li>
+          <li>독립적이다</li>
+          <li>뭐 하나 꽂히면 무섭게 파고든다</li>
+          <li>외유내강</li>
+          <li>허영심이 없다</li>
+          <li>지혜롭다</li>
+          <li>나를 괜찮은 사람으로 만들어준다</li>
+          <li>말이 잘통한다</li>
+          <li>취향이 비슷하다</li>
+          <li>화장 안 해도 이쁘다</li>
+          <li>긍정적이다</li>
+          <li>낭만 있다</li>
+          <li>보기만 해도 기분이 좋아진다</li>
+          <li>이해심이 많다</li>
+          <li>상대를 불안하게 하지 않는다</li>
+          <li>나의 개그를 잘 받아준다</li>
+          <li>나의 단점을 단점으로 봐주지 않는다</li>
+          <li>나의 바닥을 보여줄 수 있는 사람이었다</li>
+          <li>말을 잘 들어준다</li>
+          <li>기댈 수 있다</li>
+          <li>기분이 늘 일정하다</li>
+          <li>가끔 애기 같다</li>
+          <li>같이 있으면 항상 즐겁다</li>
+          <li>함께하면 힘든 일도 전혀 힘들지 않았다</li>
+          <li>나보다 나를 더 잘 알아주는 사람이었다</li>
+          <li>엉뚱하다</li>
+          <li>새로운 걸 경험할 때 특유의 모습들</li>
+          <li>노을이나 야경 볼 때 모습</li>
+          <li>세상에서 제일 재밌다</li>
+          <li>마냥 사랑스럽다</li>
+          <li>천진난만하다</li>
+          <li>과즙미</li>
+          <li>소중하다</li>
+          <li>정리정돈을 잘한다</li>
+          <li>쭈굴미가 너무 귀엽다</li>
+          <li>낭만을 알려주었다</li>
+          <li>기분이 좋지 않아도 존재 자체만으로 기분이 풀렸다</li>
+          <li>삶의 원동력</li>
+          <li>멍충멍충미</li>
+          <li>나를 부르는 목소리</li>
+          <li>나에게 장난치는 모습</li>
+          <li>나에게 요리해주는 모습</li>
+          <li>오늘 있었던 일이라며 신나서 말해주는 모습</li>
+          <li>나를 휘어잡는 모습</li>
+          <li>모르는 게 있어 나에게 물어보는 모습</li>
+          <li>나랑 싸워도 나를 귀여워하는 모습</li>
+          <li>나와 함께 걷고, 술 마시는 걸 좋아해줘서</li>
+          <li>소소한 선물을 사오는 모습</li>
+          <li>혼자 있는 게 걱정되어 카레를 왕창 끓여주는 모습</li>
+          <li>내가 잘 되기를 바래주는 모습</li>
+          <li>일하는 곳에서 싸게 샀다고 자랑할 때</li>
+          <li>화날 때 바로 말해줘서</li>
+          <li>깜짝 생일 파티 해주던 모습</li>
+          <li>꼭 안고 있으면 모든 근심 걱정이 사라져서</li>
+          <li>똥고집 부리면 코를 물려고 하는 모습</li>
+          <li>앞머리 자르고 망해서 나에게 사진 보낼 때</li>
+          <li>망한 머리를 봐도 귀엽다고 해줘서</li>
+          <li>데이트 장소들을 함께 가자고 하는 모습</li>
+          <li>내 안부를 궁금해하며 물어봐줘서</li>
+          <li>노래방에서 신나게 놀 수 있어서</li>
+          <li>나를 위해 슬램덩크를 봐줘서</li>
+          <li>내 가방을 대신 들어주려 할 때</li>
+          <li>취업 스트레스를 옆에서 응원해줘서</li>
+          <li>노래를 추천해주는 모습</li>
+          <li>늘 노력해주는 모습들</li>
+          <li>매일 집에 데려다주는 모습</li>
+          <li>내 장난도 받아줄 때</li>
+          <li>손잡고 노래 부르며 다닐 때</li>
+          <li>그냥 매일 다른 이유가 생긴다</li>
+          <li>그냥 너라서</li>
+        </ol>
+      </div>
+    <div class="letter-content" id="letter2">두 번째 편지 내용입니다.</div>
+    <div class="letter-content" id="letter3">세 번째 편지 내용입니다.</div>
+  </div>
+
+  <script>
+    // 사진 슬라이드
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slider img');
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 5000);
+
+    // 편지 목록 클릭 이벤트
+    const letters = document.querySelectorAll('.letters li');
+    const letterContents = document.querySelectorAll('.letter-content');
+    letters.forEach(letter => {
+      letter.addEventListener('click', () => {
+        letterContents.forEach(content => content.style.display = 'none');
+        const targetId = letter.getAttribute('data-letter');
+        document.getElementById(targetId).style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
